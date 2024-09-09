@@ -1,0 +1,516 @@
+body {
+    font-family: system-ui,'Open Sans', 'Helvetica Neue', sans-serif, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    position: relative;
+   
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/bb.jpg'); /* Ruta de la imagen */
+    background-size: cover;
+    background-position: center;
+    filter: blur(5px); /* Difuminado del fondo */
+    z-index: -1; /* Coloca el fondo detrás de todo */
+}
+
+.contenido {
+    position: relative;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo semitransparente */
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px; /* Ajusta el ancho máximo al formulario */
+    margin: 40px auto; /* Centrar el contenido y agregar separación */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera para destacar */
+}
+header {
+    background-color: #333;
+    padding: 0.5rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 1rem;
+}
+
+.logo img {
+    height: 60px; /* Ajusta según tu diseño */
+    width: auto;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    transition: left 0.3s ease;
+}
+
+.nav-links li {
+    margin-left: 1.5rem;
+}
+
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #f4f4f4;
+}
+
+/* Menú de hamburguesa */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+
+
+.menu-toggle span {
+    height: 3px;
+    width: 25px;
+    background-color: #fff;
+    margin: 4px 0;
+    transition: all 0.3s ease;
+}
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Media Queries */
+
+/* Para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        top: 60px; /* Altura del header */
+        left: -100%;
+        flex-direction: column;
+        background-color: #333;
+        width: 100%;
+        text-align: center;
+        transition: left 0.3s ease;
+    }
+
+    .nav-links.active {
+        left: 0;
+    }
+
+    .nav-links li {
+        margin: 1.5rem 0;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+}
+
+/* Media Queries */
+
+/* Para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        top: 60px; /* Altura del header */
+        left: -100%;
+        flex-direction: column;
+        background-color: #333;
+        width: 100%;
+        text-align: center;
+        transition: left 0.3s ease;
+    }
+
+    .nav-links.active {
+        left: 0;
+    }
+
+    .nav-links li {
+        margin: 1.5rem 0;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+}
+
+main {
+    padding: 2rem;
+}
+
+.productos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.producto {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    width: calc(33.33% - 2rem);
+    margin: 1rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.producto img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.producto:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .producto {
+        width: calc(50% - 2rem);
+    }
+}
+
+@media (max-width: 480px) {
+    .producto {
+        width: calc(100% - 2rem);
+    }
+}
+
+
+.producto img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    object-fit: cover;
+}
+
+.producto:hover img {
+    transform: scale(1.2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.producto h3 {
+    font-size: 1.25rem;
+    color: #333;
+    margin: 0.5rem 0;
+}
+
+.producto p {
+    font-size: 1rem;
+    color: #666;
+    padding: 0 1rem 1rem;
+}
+
+
+.btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 0.5rem;
+    background-color: #ff7b00;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.btn:hover {
+    background-color: #db6a00;
+    transform: translateY(-5px);
+}
+
+
+/* Estilos para pantallas grandes (desktops y tablets en modo horizontal) */
+@media (min-width: 768px) {
+    main {
+        max-width: 1200px;
+        margin: auto;
+        padding: 2rem;
+    }
+
+    .productos {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .producto {
+        width: 45%; /* Dos productos por fila */
+    }
+}
+
+/* Estilos para pantallas medianas (tablets en modo vertical y móviles grandes) */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column; /* Menú en columna */
+    }
+
+    .producto {
+        width: 100%; /* Un producto por fila */
+    }
+
+    .btn {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin: 1rem 0;
+        color: #ff7b00;
+    }
+}
+
+/* Estilo general para los botones de redes sociales */
+.social-buttons-container {
+    display: flex;
+    flex-direction: column; /* Organiza los botones en una columna */
+    align-items: center; /* Centra los botones horizontalmente */
+    gap: 10px; /* Espacio entre los botones */
+}
+
+.social-buttons-container {
+    position: fixed;
+    bottom: 70px;
+    right: 20px;
+    display: flex;
+    flex-direction: column; /* Organiza los botones en una columna */
+    align-items: center; /* Centra los botones horizontalmente */
+    gap: 10px; /* Espacio entre los botones */
+    z-index: 1000;
+}
+
+/* Estilo para los botones individuales */
+.social-button {
+    width: 60px; /* Ajusta el tamaño total del botón según tus preferencias */
+    height: 60px; 
+    background-color: #fff; /* Color de fondo del botón, puedes cambiarlo */
+    border-radius: 50%; /* Hace los botones circulares */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Sombra del botón */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Asegura que la imagen no se salga del círculo */
+    transition: background-color 0.3s; /* Efecto suave en el cambio de color */
+}
+
+.social-button img {
+    width: 60%; /* Tamaño de la imagen dentro del botón */
+    height: auto;
+    object-fit: cover; /* Asegura que la imagen cubra el área del botón sin distorsionarse */
+}
+
+/* Opcional: cambiar el color de fondo en hover */
+.social-button:hover {
+    background-color: #ff7b00; /* Cambia el color de fondo al pasar el mouse */
+}
+
+/* Estilos para pantallas pequeñas (móviles) */
+@media (max-width: 480px) {
+    header {
+        padding: 0.5rem 0;
+    }
+
+    nav ul li {
+        margin: 0.5rem 0;
+    }
+
+    nav ul li a {
+        font-size: 1rem;
+    }
+
+    main {
+        padding: 1rem;
+    }
+
+    section img {
+        width: 100%;
+        height: auto;
+    }
+
+    footer {
+        padding: 0.5rem 0;
+        font-size: 0.875rem;
+    }
+}
+/* Estilos del carrusel */
+/* Estilos para el formulario */
+#contacto-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border 0.3s ease;
+}
+
+.form-group input:focus, 
+.form-group textarea:focus {
+    border-color: #ff7b00;
+    outline: none;
+}
+
+.btn-enviar {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff7b00;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    width: 100%;
+}
+
+.btn-enviar:hover {
+    background-color: #ff7b00;
+    transform: translateY(-3px);
+}
+
+/* Para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+    #contacto-form {
+        padding: 15px;
+    }
+}
+
+
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 350px; /* Ajusta la altura según tus necesidades */
+    overflow: hidden;
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Para que el video cubra todo el contenedor */
+}
+.image-flayer {
+    width: auto; /* Ancho del div */
+    height: auto; /* Altura del div */
+    overflow: hidden; /* Oculta cualquier contenido que exceda el tamaño del div */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc; /* Opcional: solo para ver el borde del div */
+}
+
+.image-flayer img {
+    width: 90%; /* Ajusta el ancho de la imagen al div */
+    height: auto; /* Mantiene la proporción de la imagen */
+    object-fit: cover; /* Asegura que la imagen cubra el div sin deformarse */
+}
+
+#productos-solicitados {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#productos-solicitados li {
+    padding: 5px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.carousel-empresa-container {
+    margin: 50px 0;
+    text-align: center;
+}
+
+.carousel-empresa {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    margin: auto;
+}
+
+.carousel-empresa-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%;
+}
+
+.carousel-empresa-item {
+    min-width: 25%;
+    flex: 0 0 25%; /* Para mostrar 4 imágenes por vez */
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.carousel-empresa-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.carousel-empresa-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiper Mallas Yopal C&S</title>
+    <link rel="icon" href="images/logoo.png" type="image/x-icon">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header> 
+        <nav>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logoo.png" alt="Logo del Sitio Web" width="400" height="400">
+                </a>
+            </div> 
+            <ul class="nav-links">
+                <li><a href="index.html" style="color: #ff7b00;">Inicio</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <div class="video-container" data-aos="fade-right">
+        <video autoplay loop muted>
+            <source src="images/videolento.mp4" type="video/mp4">
+            Tu navegador no soporta el video HTML5.
+        </video>
+    </div>
+
+    <main>
+        <section>
+
+                <img src="images/Letraaa.png" data-aos="fade-right" width="500px" height="125px" alt="Hiper Mallas">
+
+            <div data-aos="fade-down">
+                <h1><span style="color: #ff7b00;">Nuestros Productos</span></h1>
+            </div>
+
+            <div class="productos">
+                <div class="producto" data-aos="fade-up">
+                    <img src="images/ProductoMalla.jpg" width="150px" height="150px" alt="Malla Eslabonada">
+                    <h3>Malla Eslabonada</h3>
+                    <p><div>
+                        <div>La malla eslabonada, es un tipo de cerca hecha de alambre de acero galvanizado o recubierto de PVC, entrelazado en forma de rombos. Es resistente a la corrosi&oacute;n y f&aacute;cil de instalar</div>
+                        <div>&nbsp;</div>
+                        <div><span style="color: #ff6600;"><strong>Algunos Usos:</strong></span></div>
+                        <div>Cercado de terrenos, jardines,piscinas y parques. Protecci&oacute;n perimetral en industrias y f&aacute;bricas. Cercado de instalaciones deportivas como canchas de tenis o f&uacute;tbol.</div>
+                        </div></p>
+                    <label for="malla-ancho">Ancho (m):</label>
+                    <input type="number" id="malla-ancho" class="producto-malla-ancho" min="1" value="0" placeholder="Ancho en metros">
+                    <label for="malla-alto">Altura (m):</label>
+                    <input type="number" id="malla-alto" class="producto-malla-alto" min="1" value="0" placeholder="Altura en metros">
+                    <label for="malla-calibre">Calibre:</label>
+                    <select id="malla-calibre" class="producto-malla-calibre">
+                        <option value="10.5">10.5</option>
+                        <option value="12.5">12.5</option>
+                        <option value="14">14</option>
+                    </select>
+                    <label for="malla-cantidad">Cantidad (m²):</label>
+                    <input type="number" id="malla-cantidad" class="producto-malla-cantidad" readonly placeholder="Cantidad en metros cuadrados">
+                </div>
+                <div class="producto" data-aos="fade-up">
+                    <img src="images/ProductoConcertinas.jpg" alt="Concertinas de Seguridad">
+                    <h3>Concertinas</h3>
+                    <p>Barrera de acero con hojas cortantes, perfecta para reforzar cercas y aumentar la seguridad perimetral.</p>
+                    <label for="concertina-rollos">Rollos (6 metros cada uno):</label>
+                    <input type="number" id="concertina-rollos" class="producto-concertina-rollos" min="1" value="0" placeholder="Cantidad de rollos">
+                </div>
+                <div class="producto" data-aos="fade-up">
+                    <img src="images/ProductoTuberia.jpg" alt="Tubería">
+                    <h3>Tubería</h3>
+                    <p>Tubos de acero galvanizado que proporcionan soporte y estabilidad a cercas y estructuras.</p>
+                    <label for="tuberia-calibre">Calibre:</label>
+                    <select id="tuberia-calibre" class="producto-tuberia-calibre">
+                        <option value="16">16</option>
+                        <option value="18">18</option>
+                    </select>
+                    <label for="tuberia-metros">Metros:</label>
+                    <input type="number" id="tuberia-metros" class="producto-tuberia-metros" min="1" value="0" placeholder="Metros lineales">
+                </div>
+                <div class="producto" data-aos="fade-up">
+                    <img src="images/ProductoPlatinas.jpg" alt="Platinas de Acero">
+                    <h3>Platinas</h3>
+                    <p>Las platinas son barras de acero planas de diferentes anchos y grosores. Generalmente, son fabricadas en acero al carbono o acero inoxidable y se utilizan en diversas aplicaciones industriales y de construcción.</p>
+                    <label for="platina-metros">Platina (6 metros cada uno):</label>
+                    <input type="number" id="platina-metros" class="producto-platina-metros" min="1" value="0" placeholder="Cantidad de platinas">
+                </div>
+        </section>
+
+        <button id="solicitar-cotizacion-btn" class="btn">Solicitar Cotización</button>
+    </main>
+
+    <section>
+        <div data-aos="fade-up">
+        <center><h1><span style="color: #ff7b00;">Nuestros Proyectos</span></h1></center>
+        </div>
+        <div class="carousel-empresa">
+        <div class="carousel-empresa-inner">
+            <div class="carousel-empresa-item active">
+                <img src="images/proyecto2.jpg" alt="Imagen 1">
+            </div>
+            <div class="carousel-empresa-item">
+                <img src="images/proyecto3.jpg" alt="Imagen 2">
+            </div>
+            <div class="carousel-empresa-item">
+                <img src="images/proyecto1.jpg" alt="Imagen 3">
+            </div>
+            <div class="carousel-empresa-item">
+                <img src="images/proyecto2.jpg" alt="Imagen 1">
+            </div>
+            <div class="carousel-empresa-item">
+                <img src="images/proyecto5.jpg" alt= "Imagen 2">
+            </div>
+            <div class="carousel-empresa-item">
+                <img src="images/proyecto3.jpg" alt="Imagen 2">
+            </div>
+            <div class="carousel-empresa-item">
+                <img src="images/proyecto1.jpg" alt="Imagen 3">
+            </div>
+            <div class="carousel-empresa-item">
+                <img src="images/proyecto2.jpg" alt="Imagen 1">
+            </div>
+            <div class="carousel-empresa-item">
+                <img src="images/proyecto2.jpg" alt="Imagen 1">
+            </div>
+                        <div class="carousel-empresa-item">
+                <img src="images/proyecto2.jpg" alt="Imagen 1">
+            </div>
+        </div>
+        <button class="carousel-empresa-control prev" onclick="prevSlide()">&#10094;</button>
+        <button class="carousel-empresa-control next" onclick="nextSlide()">&#10095;</button>
+        </div>
+    </section>
+    <footer>
+        <div class="social-buttons-container">
+            <a href="https://wa.me/573112603596" class="social-button" target="_blank" data-aos="fade-left" >
+                <img src="images/whatsapp.png" alt="Chatea con nosotros en WhatsApp">
+            </a>
+            <a href="https://www.tiktok.com/@hipermallas_yopal" class="social-button" target="_blank" data-aos="fade-left">
+                <img src="images/tiktok.png" alt="Síguenos en TikTok">
+            </a>
+            <a href="https://www.facebook.com/LovelysCompany" class="social-button" target="_blank" data-aos="fade-left">
+                <img src="images/facebook.png" alt="Síguenos en Facebook">
+            </a>
+            <a href="https://www.instagram.com/hipermallas_yopal/" class="social-button" target="_blank" data-aos="fade-left">
+                <img src="images/instagram.png" alt="Síguenos en Instagram">
+            </a>
+        </div>
+        <p>&copy; 2024 Mi Malla Eslabonada. Cr 29 # 19 - 30 & Cll 24 # 22 - 65   3112603596 - 3208009104.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/scripts.js" defer></script>
+    <script src="js/carousel.js" defer></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            AOS.init({
+                duration: 1000,
+                easing: 'ease-in-out',
+                once: true,
+            });
+        });
+
+        // Almacenar productos seleccionados y sus cantidades en localStorage
+        document.getElementById('solicitar-cotizacion-btn').addEventListener('click', () => {
+    const productosSeleccionados = [];
+
+    const mallaAncho = document.querySelector('.producto-malla-ancho').value;
+    const mallaAlto = document.querySelector('.producto-malla-alto').value;
+    const mallaCalibre = document.querySelector('.producto-malla-calibre').value;
+    const mallaCantidad = document.querySelector('.producto-malla-cantidad').value;
+
+    if (mallaCantidad > 0) {
+        productosSeleccionados.push({
+            producto: 'Malla Eslabonada',
+            detalles: `Ancho: ${mallaAncho}m, Alto: ${mallaAlto}m, Calibre: ${mallaCalibre}, Cantidad: ${mallaCantidad}m²`
+        });
+    }
+
+    const tuberiaCalibre = document.querySelector('.producto-tuberia-calibre').value;
+    const tuberiaMetros = document.querySelector('.producto-tuberia-metros').value;
+
+    if (tuberiaMetros > 0) {
+        productosSeleccionados.push({
+            producto: 'Tubería',
+            detalles: `Calibre: ${tuberiaCalibre}, Metros: ${tuberiaMetros}`
+        });
+    }
+
+    const concertinaRollos = document.querySelector('.producto-concertina-rollos').value;
+
+    if (concertinaRollos > 0) {
+        productosSeleccionados.push({
+            producto: 'Concertinas',
+            detalles: `Rollos: ${concertinaRollos} (6m cada uno)`
+        });
+    }
+
+    const platinaMetros = document.querySelector('.producto-platina-metros').value;
+
+    if (platinaMetros > 0) {
+        productosSeleccionados.push({
+            producto: 'Platinas',
+            detalles: `Platina de 6m (Cantidad: ${platinaMetros})`
+        });
+    }
+
+    localStorage.setItem('productosSeleccionados', JSON.stringify(productosSeleccionados));
+    window.location.href = 'contacto.html';
+});
+
+    </script>
+
+
+
+<script>
+    // Seleccionar los campos de entrada
+    const mallaAnchoInput = document.querySelector('.producto-malla-ancho');
+    const mallaAltoInput = document.querySelector('.producto-malla-alto');
+    const mallaCantidadInput = document.querySelector('.producto-malla-cantidad');
+
+    // Función para calcular el área en metros cuadrados
+    function calcularM2() {
+        const ancho = parseFloat(mallaAnchoInput.value) || 0;
+        const alto = parseFloat(mallaAltoInput.value) || 0;
+        const cantidadM2 = ancho * alto;
+        mallaCantidadInput.value = cantidadM2.toFixed(2); // Redondea a 2 decimales
+    }
+
+    // Escuchar cambios en los campos de ancho y alto
+    mallaAnchoInput.addEventListener('input', calcularM2);
+    mallaAltoInput.addEventListener('input', calcularM2);
+</script>
+
+</body>
+</html>
