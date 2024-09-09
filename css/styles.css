@@ -74,6 +74,54 @@ nav {
     color: #f4f4f4;
 }
 
+/* Carrusel */
+.carousel {
+    position: relative;
+    width: 100%;        /* Usa el 100% del ancho del contenedor padre para que ocupe toda la pantalla si es necesario */
+    max-width: 100%;     /* Controla el ancho máximo del carrusel para mantener un margen si lo deseas */
+    margin: auto;
+    overflow: hidden;
+    height: 500px;      /* Ajusta la altura para que coincida con la de las imágenes */
+} 
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.carousel img {
+    width: 100%;          /* Hace que la imagen ocupe el 100% del ancho del contenedor */
+    height: 500px;        /* Fija una altura para las imágenes (ajústalo según tu diseño) */
+    object-fit: cover;    /* Mantiene las proporciones de la imagen y recorta el exceso */
+    border-radius: 10px;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 1;
+}
+
+.carousel-control.prev {
+    left: 10px;
+}
+
+.carousel-control.next {
+    right: 10px;
+}
+
 /* Menú de hamburguesa */
 .menu-toggle {
     display: none;

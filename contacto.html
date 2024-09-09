@@ -38,22 +38,27 @@
                     <label for="nombre">Nombre:</label>
                     <input type="text" id="nombre" name="nombre" required placeholder="Escribe tu nombre">
                 </div>
+
                 <div class="form-group">
                     <label for="productos-solicitados">Productos Seleccionados:</label>
                     <ul id="productos-solicitados"></ul> <!-- Aquí se mostrarán los productos -->
                 </div>
+                
                 <div class="form-group" data-aos="fade-down">
                     <label for="mensaje">Mensaje:</label>
                     <textarea id="mensaje" name="mensaje" rows="5" required placeholder="Escribe tu mensaje"></textarea>
                 </div>
+
                 <button type="button" id="enviar-whatsapp" class="btn-enviar" data-aos="fade-down">Enviar</button>
             </form>
         </div>
     </section>
 </main>
+
 <div class="image-flayer" data-aos="fade-right">
     <img src="images/flayer.jpg" alt="Descripción de la imagen">
 </div>
+
 <footer>
     <div class="social-buttons-container">
         <a href="https://wa.me/573112603596" class="social-button" target="_blank" data-aos="fade-left" >
@@ -72,17 +77,16 @@
     <p>&copy; 2024 Mi Malla Eslabonada. Cr 29 # 19 - 30 & Cll 24 # 22 - 65   3112603596 - 3208009104.</p>
 </footer>
 
-    <!-- Archivos de JavaScript -->
-    <script src="js/scripts.js"></script>
-    <script src="js/scroll.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            duration: 1000,
-        });
+<!-- Archivos de JavaScript -->
+<script src="js/scripts.js"></script>
+<script src="js/scroll.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 1000,
+    });
 
-     //  Traeer datoos
-
+    // Mostrar productos seleccionados almacenados en localStorage
     document.addEventListener('DOMContentLoaded', () => {
         const productosSeleccionados = JSON.parse(localStorage.getItem('productosSeleccionados')) || [];
         const listaProductos = document.getElementById('productos-solicitados');
@@ -100,40 +104,25 @@
         }
     });
 
+    // Enviar los datos del formulario a WhatsApp
     document.getElementById('enviar-whatsapp').addEventListener('click', () => {
         const nombre = document.getElementById('nombre').value;
-        const email = document.getElementById('email').value;
         const mensaje = document.getElementById('mensaje').value;
 
         const productosSeleccionados = JSON.parse(localStorage.getItem('productosSeleccionados')) || [];
-        let productosTexto = productosSeleccionados.map(item => `${item.producto} (Detalles: ${item.detalles})`).join(', ');
+        
+        // Cambiar la unión de productos para que cada uno esté en una nueva línea
+        let productosTexto = productosSeleccionados.map(item => `${item.producto} (Detalles: ${item.detalles})`).join('\n');
 
-        let whatsappMessage = `Nombre: ${nombre}\nEmail: ${email}\nProductos: ${productosTexto}\nMensaje: ${mensaje}`;
+        let whatsappMessage = `Nombre: ${nombre}\nProductos:\n${productosTexto}\nMensaje: ${mensaje}`;
 
+        // Reemplaza espacios por %20 para URLs y redirige a WhatsApp
         const whatsappURL = `https://api.whatsapp.com/send/?phone=573112603596&text=${encodeURIComponent(whatsappMessage)}&type=phone_number&app_absent=0`;
         window.open(whatsappURL, '_blank');
+
+        // Borrar los datos de los productos seleccionados de localStorage
+        localStorage.removeItem('productosSeleccionados');
     });
-
-// Enviar los datos del formulario a WhatsApp
-document.getElementById('enviar-whatsapp').addEventListener('click', () => {
-    const nombre = document.getElementById('nombre').value;
-    const email = document.getElementById('email').value;
-    const mensaje = document.getElementById('mensaje').value;
-
-    const productosSeleccionados = JSON.parse(localStorage.getItem('productosSeleccionados')) || [];
-    
-    // Cambiar la unión de productos para que cada uno esté en una nueva línea
-    let productosTexto = productosSeleccionados.map(item => `${item.producto} (Detalles: ${item.detalles})`).join('\n');
-
-    let whatsappMessage = `Nombre: ${nombre}\nEmail: ${email}\nProductos:\n${productosTexto}\nMensaje: ${mensaje}`;
-
-    // Reemplaza espacios por %20 para URLs y redirige a WhatsApp
-    const whatsappURL = `https://api.whatsapp.com/send/?phone=573112603596&text=${encodeURIComponent(whatsappMessage)}&type=phone_number&app_absent=0`;
-    window.open(whatsappURL, '_blank');
-
-    // Borrar los datos de los productos seleccionados de localStorage
-    localStorage.removeItem('productosSeleccionados');
-});
-    </script>
+</script>
 </body>
 </html>
